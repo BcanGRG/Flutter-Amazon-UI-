@@ -2,6 +2,6 @@
 
 ## Uygulama İçi Video
 
-![Gif](/assets/video.gif)
+![Gif](/assets/video.gif =250x250)
 
 
