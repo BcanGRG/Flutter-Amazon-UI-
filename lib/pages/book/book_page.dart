@@ -1,0 +1,63 @@
+import 'package:amazon_ui_demo/constants.dart';
+import 'package:amazon_ui_demo/models/book_model.dart';
+import 'package:amazon_ui_demo/pages/book/widgets/book_display.dart';
+import 'package:amazon_ui_demo/pages/book/widgets/description.dart';
+import 'package:flutter/material.dart';
+
+class BookPage extends StatefulWidget {
+  BookPage({Key? key, required this.book}) : super(key: key);
+  final BookModel book;
+
+  @override
+  State<BookPage> createState() => _BookPageState();
+}
+
+class _BookPageState extends State<BookPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.keyboard_arrow_left_outlined,
+              color: Colors.black87,
+            )),
+        actions: [
+          IconButton(
+              onPressed: () {
+                setState(() {
+                  widget.book.favorite = !widget.book.favorite;
+                });
+              },
+              icon: Icon(
+                widget.book.favorite
+                    ? Icons.favorite
+                    : Icons.favorite_border_outlined,
+                color: Colors.red,
+              )),
+        ],
+      ),
+      body: SafeArea(
+        child: Container(
+          height: double.infinity,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: Constants.kPadding,
+            ),
+            child: Column(
+              children: [
+                ...buildBookDisplay(book: widget.book),
+                ...buildDescription(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

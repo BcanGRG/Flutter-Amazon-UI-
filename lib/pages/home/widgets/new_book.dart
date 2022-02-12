@@ -1,5 +1,6 @@
 import 'package:amazon_ui_demo/constants.dart';
 import 'package:amazon_ui_demo/models/book_model.dart';
+import 'package:amazon_ui_demo/pages/book/book_page.dart';
 import 'package:flutter/material.dart';
 
 class BuildNewBook extends StatelessWidget {
@@ -32,7 +33,10 @@ class BuildNewBook extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => BookPage(book: newBook)));
+          },
           child: Column(
             children: [
               Padding(

@@ -1,5 +1,6 @@
 import 'package:amazon_ui_demo/constants.dart';
 import 'package:amazon_ui_demo/models/book_model.dart';
+import 'package:amazon_ui_demo/pages/book/book_page.dart';
 import 'package:flutter/material.dart';
 
 final List<BookModel> books = BookModel.books;
@@ -58,7 +59,14 @@ class BuildBookList extends StatelessWidget {
                       left: index == 0 ? Constants.kPadding : 0,
                     ),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BookPage(
+                                      book: books[index],
+                                    )));
+                      },
                       child: Column(
                         children: [
                           Card(
