@@ -98,6 +98,9 @@ class BuildNewBook extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(
+          height: MediaQuery.of(context).padding.bottom,
+        )
       ],
     );
   }
