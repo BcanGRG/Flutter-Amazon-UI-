@@ -2,5 +2,5 @@
 
 ## Uygulama İçi Video
 
-<img src="./assets/video.gif" width="200" height="400">
+<img src="./assets/video.gif" width="300" height="600">
 
